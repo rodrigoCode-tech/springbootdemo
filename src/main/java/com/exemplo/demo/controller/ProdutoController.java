@@ -38,6 +38,7 @@ public class ProdutoController {
 			return ResponseEntity.notFound().build();
 		
 	}
+	
 	@GetMapping
 	public ResponseEntity<?> lista(){
 		
@@ -51,6 +52,7 @@ public class ProdutoController {
 		return ResponseEntity.ok(produtoService.atualizar(produto));
 		
 	}
+	
 	@DeleteMapping
 	public ResponseEntity<?> delete(@RequestBody Produto produto) throws Exception{
 		produtoService.delete(produto);

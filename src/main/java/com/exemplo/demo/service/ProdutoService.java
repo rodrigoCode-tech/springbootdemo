@@ -28,6 +28,7 @@ public class ProdutoService {
 		// TODO Auto-generated method stub
 		return produtoRepository.findById(id).orElse(null);
 	}
+	
 	public Produto atualizar(Produto produto) throws Exception {
 		Produto produtoOriginal = produtoRepository.findById(produto.getId())
 				.orElseThrow(() -> new Exception("Produto não existe"));
@@ -37,6 +38,7 @@ public class ProdutoService {
 		produtoOriginal = produtoRepository.save(produtoOriginal);
 		return produtoOriginal;
 	}
+	
 	public void delete(Produto produto) throws Exception {
 		Produto produtoOriginal = produtoRepository.findById(produto.getId())
 				.orElseThrow(() -> new Exception("Produto não existe"));
