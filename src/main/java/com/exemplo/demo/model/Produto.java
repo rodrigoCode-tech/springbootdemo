@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Positive;
 
 import org.hibernate.annotations.GenericGenerator;
 @Entity
@@ -18,8 +20,10 @@ public class Produto {
 	@GenericGenerator(name = "native", strategy = "native")
 	private Long id;
 	
+	@NotEmpty
 	private String nome;
 	
+	@Positive
 	private BigDecimal valor;
 	
 	

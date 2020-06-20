@@ -1,5 +1,7 @@
 package com.exemplo.demo.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -22,7 +24,7 @@ public class ProdutoController {
 	private ProdutoService produtoService;
 	
 	@PostMapping
-	public ResponseEntity<?> novo(@RequestBody Produto produto){
+	public ResponseEntity<?> novo(@RequestBody @Valid Produto produto){
 		
 		return ResponseEntity.ok(produtoService.novo(produto));
 		
@@ -47,7 +49,7 @@ public class ProdutoController {
 	}
 
 	@PutMapping
-	public ResponseEntity<?> atualizar(@RequestBody Produto produto) throws Exception{
+	public ResponseEntity<?> atualizar(@RequestBody @Valid Produto produto) throws Exception{
 		
 		return ResponseEntity.ok(produtoService.atualizar(produto));
 		
